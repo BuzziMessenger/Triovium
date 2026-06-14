@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Triovium - Jouw alles-in-één vergelijker</title>
+        <link rel="stylesheet" href="style.css">
+        <!-- PapaParse CSV parser library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    </head>
+<body>
+    <header>
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+                <!-- Background shape - abstract comparison theme -->
+                <path d="M20,50 Q60,20 100,50 T180,50 Q220,80 260,50" fill="#3498db" opacity="0.8"/>
+
+                <!-- Triovium text with modern styling -->
+                <text x="50" y="45" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" letter-spacing="1">Triovium</text>
+
+                <!-- Comparison icon -->
+                <g transform="translate(220, 25)">
+                    <!-- Price tag icon -->
+                    <path d="M0,0 L20,0 L20,15 L10,25 L0,15 Z" fill="#e74c3c"/>
+                    <circle cx="10" cy="12" r="3" fill="white"/>
+
+                    <!-- Arrow icon (comparison) -->
+                    <path d="M30,10 L40,15 L30,20" stroke="white" stroke-width="2" fill="none"/>
+                    <path d="M40,15 L50,15" stroke="white" stroke-width="2" fill="none"/>
+                </g>
+            </svg>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Triovium - Jouw alles-in-één vergelijker</h2>
+        <p>De slimste deals van alle grote webshops op één plek.</p>
+    </section>
+
+    <main>
+        <div class="controls">
+            <div class="search-section">
+                <input type="text" id="search-input" placeholder="Zoek producten...">
+                <button id="search-button">Zoeken</button>
+            </div>
+
+            <div class="filter-section">
+                <label for="shop-filter">Filter op winkel:</label>
+                <select id="shop-filter">
+                    <option value="all">Alle winkels</option>
+                    <option value="Bol">Bol</option>
+                    <option value="Coolblue">Coolblue</option>
+                </select>
+            </div>
+
+            <div class="sort-section">
+                <label for="sort-by">Sorteren op:</label>
+                <select id="sort-by">
+                    <option value="price-asc">Prijs: Laag naar Hoog</option>
+                    <option value="price-desc">Prijs: Hoog naar Laag</option>
+                    <option value="name-asc">Naam: A-Z</option>
+                    <option value="name-desc">Naam: Z-A</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="product-grid" id="product-grid">
+            <!-- Producten worden hier dynamisch geladen -->
+        </div>
+    </main>
+
+    <script src="dataService.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
